@@ -1,7 +1,7 @@
 ﻿import trivia
 import pytest
 
-class StubLogger:
+class SpyLogger:
     def __init__(self):
         self.logs = []
         
@@ -9,4 +9,4 @@ class StubLogger:
         self.logs.append(message)
 
 def test_deterministic():
-    assert trivia.run(StubLogger()).logs == open("./result.txt", "r").read().split("\n")
+    assert trivia.run(SpyLogger()).logs == open("./result.txt", "r").read().split("\n")

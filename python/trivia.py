@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-from tests.test_trivia import StubLogger
 
 
 class Logger:
@@ -21,7 +20,7 @@ class Game:
         self.current_player = 0
         self.is_getting_out_of_penalty_box = False
         
-        self.logger = Logger() if logger is None else StubLogger()
+        self.logger = Logger() if logger is None else logger
 
         for i in range(50):
             self.pop_questions.append("Pop Question %s" % i)
